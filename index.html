@@ -72,10 +72,10 @@ audio{accent-color:#ef5368}audio::-webkit-media-controls-panel{background:#ffeaf
 const A='/';
 const messages=[
 `Plzz maaf kr dijiye yrrr I'm sorry sach me sorry huu 😭🤌🏻🤌🏻`,
-`Plzzz nah maf kr dijiye me sorry bol toh rha hu  I'm Sorryyyyyyyyyyyyyyyyyyyyy 😭😔`,
+`Plzzz nah maf kr dijiye me sorry bol rha hu nahhhh  I'm Sorryyyyyyyyyyyyyyyyyyyyy 😭😔`,
 `Mujhe pta hai aap gussa hai prr plzzzz 🤌🏻🤌🏻🤌🏻`,
 `Dekhiye ye bhi bda hote jaa rha ye bhi chahta hai maaf kr de aap 👀😿`,
-`No mat dabaiye nah plzzz 🙂`,
+`No mat dabaiye nah plzzz nhi dabane dunga😰 🙂`,
 `Just yes dba dijiye plzzz plzzzzzzzzz🥺🙍🏻`,
 `Mujhe pta tha 🤌🏻👀👀👀`
 ];
@@ -94,7 +94,7 @@ function back(){
  else if(page==='final'){page='songs';}
  render();
 }
-function fallingHTML(){const bits=["🌹","🌹","🌹","🌸","🌹","⭐","🌹","🌸","⭐","🌹","🌹","⭐","🌸","🌹","⭐","🌹","🌸","🌹","⭐","🌹","🌸","🌹","⭐"];return `<div class="fallLayer">${bits.map((b,i)=>`<span class="fallBit" style="--x:${(i*37)%101}%;--s:${14+(i%5)*5}px;--o:${.35+(i%5)*.1};--d:${6+(i%6)*1.2}s;--delay:${-(i*.55)}s;--drift:${-50+(i*23)%100}px">${b}</span>`).join('')}</div>`;}
+function fallingHTML(){const bits=["🌹","🌹","🌹","🌸","🌹","⭐","🌷","🌸","⭐","🌷","🌷","⭐","🌸","🌹","⭐","🌹","🌸","🌹","⭐","🌹","🌸","🌹","⭐"];return `<div class="fallLayer">${bits.map((b,i)=>`<span class="fallBit" style="--x:${(i*37)%101}%;--s:${14+(i%5)*5}px;--o:${.35+(i%5)*.1};--d:${6+(i%6)*1.2}s;--delay:${-(i*.55)}s;--drift:${-50+(i*23)%100}px">${b}</span>`).join('')}</div>`;}
 function shell(inner,backBtn=true){return `<div class="screen"><div class="panel">${backBtn?'<button class="back" onclick="back()">← Back</button>':''}${inner}</div>${fallingHTML()}</div>`}
 function render(){
  clearTimeout(meterTimer);app.innerHTML='';
@@ -112,12 +112,12 @@ function render(){
  if(page==='final')renderFinal();
 }
 function renderIntro(){
- app.innerHTML=shell(`<div class="brand">AlinajiPlease</div><div class="waveDoodle"><div class="head"><i class="eye e1"></i><i class="eye e2"></i><i class="mouth"></i></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div><div class="leg l1"></div><div class="leg l2"></div></div><div class="introText">Hiii Miss.Alina sheikh<br>kese hai aap<br>khana kha liye aap ??</div><div class="introSub">Bas ek chhoti si baat hai… pehle ye check karne do 👀</div><button class="btn green" onclick="goAnger()">Aage dekhiye ✦</button>` ,false);
+ app.innerHTML=shell(`<div class="brand">Suniye nahh Please</div><div class="waveDoodle"><div class="head"><i class="eye e1"></i><i class="eye e2"></i><i class="mouth"></i></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div><div class="leg l1"></div><div class="leg l2"></div></div><div class="introText">Hiii Miss.Alina sheikh<br>kese hai aap🥲<br>khana kha liye aap ?? 😩 or suniye sb pura dekhiye or suniye plzz or pura end tk dekhna end me cat ayegi tb tk👀</div><div class="introSub">Bas ek chhoti si baat hai… pehle ye check karne do 👀</div><button class="btn green" onclick="goAnger()">Aage dekhiye ✦</button>` ,false);
 }
 function goAnger(){page='anger';render();}
 function renderAnger(){
- app.innerHTML=shell(`<div class="meterTitle">Gussa Check</div><div class="meterSub">gussa check kr rha hu ek sec. 😭</div><div class="meterTick">📏</div><div class="meterBox"><div id="angerFill" class="meterFill"></div></div><div id="angerPct" class="meterPercent">0%</div><div id="angerStatus" class="meterStatus">checking…</div><button id="angerNext" class="btn green next" onclick="goMessage()">Ab dekhiye ✦</button>`);
- setTimeout(()=>{document.getElementById('angerFill').style.width='100%';let n=0;const iv=setInterval(()=>{n+=5;document.getElementById('angerPct').textContent=n+'%';if(n>=100){clearInterval(iv);document.getElementById('angerStatus').textContent='Result: thoda gussa hai 😭';document.getElementById('angerNext').classList.add('ready')}},120)},150);
+ app.innerHTML=shell(`<div class="meterTitle">Gussa Check</div><div class="meterSub">gussa check kr rha hu ek sec. 😭</div><div class="meterTick">🌡️</div><div class="meterBox"><div id="angerFill" class="meterFill"></div></div><div id="angerPct" class="meterPercent">0%</div><div id="angerStatus" class="meterStatus">checking…</div><button id="angerNext" class="btn green next" onclick="goMessage()"> Next⏩ ✦</button>`);
+ setTimeout(()=>{document.getElementById('angerFill').style.width='100%';let n=0;const iv=setInterval(()=>{n+=5;document.getElementById('angerPct').textContent=n+'%';if(n>=100){clearInterval(iv);document.getElementById('angerStatus').textContent='Result: Aaa aap toh bht jyda gussa hai 😭';document.getElementById('angerNext').classList.add('ready')}},120)},150);
 }
 function goMessage(){page='message';msg=0;render();}
 function renderMessage(){
@@ -142,7 +142,7 @@ function yesClick(){
  if(msg===6){page='gifts';render();}
 }
 function renderGifts(){
- app.innerHTML=shell(`<div class="giftsTitle">Aapke liye 4 chhoti si cheezein ✦</div><div class="giftsSub">Ek-ek karke kholiye… jaldi nahi 😭</div><div class="giftGrid"><button class="giftCard" onclick="page='gift1';render()"><span class="giftIcon">🎁</span><span><div class="giftText">Plzz open toh kriye isse open meeeeeeee 🤌🏻🤌🏻🤌🏻</div><div class="giftHint">pehle wala gift ✦</div></span></button><button class="giftCard" onclick="page='gift2';render()"><span class="giftIcon">🎁</span><span><div class="giftText">mujhe bhi kholiye plzzzzzzz 🙇🏻</div><div class="giftHint">isme thoda pagalpan hai 😂</div></span></button><button class="giftCard" onclick="page='gift3';render()"><span class="giftIcon">🎁</span><span><div class="giftText">Accha ji ab ye last wala kholiye 😿🤌🏻</div><div class="giftHint">last mein ek baat hai… ⭐</div></span></button><button class="giftCard" onclick="page='gift4';render()"><span class="giftIcon">🎁</span><span><div class="giftText">Ek me bhi huuu, lekin ye wala alag type se open hoga 😭</div><div class="giftHint">chautha wala ✦</div></span></button></div>`);
+ app.innerHTML=shell(`<div class="giftsTitle">Aapke liye 4 chhoti si cheezein ✦</div><div class="giftsSub">Ek-ek karke kholiye… jaldi nahi 😭</div><div class="giftGrid"><button class="giftCard" onclick="page='gift1';render()"><span class="giftIcon">🎁</span><span><div class="giftText">Plzz open toh kriye isse open meeeeeeee 🤌🏻🤌🏻🤌🏻</div><div class="giftHint">pehle wala gift ✦</div></span></button><button class="giftCard" onclick="page='gift2';render()"><span class="giftIcon">🎁</span><span><div class="giftText">mujhe bhi kholiye plzzzzzzz 🙇🏻</div><div class="giftHint">isme thoda 👉🏻👈🏻 </div></span></button><button class="giftCard" onclick="page='gift3';render()"><span class="giftIcon">🎁</span><span><div class="giftText">Accha ji ab ye last wala kholiye 😿🤌🏻</div><div class="giftHint">last mein ek baat hai… ⭐</div></span></button><button class="giftCard" onclick="page='gift4';render()"><span class="giftIcon">🎁</span><span><div class="giftText">Ek me bhi huuu, lekin ye wala alag type se open hoga 😭</div><div class="giftHint">chautha wala ✦</div></span></button></div>`);
 }
 function renderGift1(){
  app.innerHTML=shell(`<div class="giftsTitle">Gift 1 ✦</div><div class="realGift"><img class="scene" src="gift_scene.png" alt="realistic roses and gifts"><img class="realItem r1" src="roses.jpg" alt="red roses"><img class="realItem r2" src="chocolates.jpg" alt="chocolates"><img class="realItem r3" src="kurkure.jpg" alt="Kurkure"><img class="realItem r4" src="icecream.jpg" alt="ice cream"></div><div class="finalMsg">Bht saare red roses + chocolates + Kurkure + ice cream ✦</div><button class="btn pinkbtn" onclick="page='gifts';render()">Gifts par wapas</button>`);
@@ -150,7 +150,7 @@ function renderGift1(){
 let danceAudio;
 function renderGift2(){
  stopSongAudio();
- app.innerHTML=shell(`<div class="giftsTitle">Gift 2 😂</div><div class="giftStage" style="min-height:510px"><div class="danceFrame"><video id="dance" playsinline muted preload="metadata" src="dance_with_sorry_full.mp4"></video></div></div><div class="finalMsg">Bas aapko hasaane ke liye ye pagal dance 😂</div><audio id="danceAudio" controls preload="auto" class="audioPlayer"><source src="sorry_sorry.mp3" type="audio/mpeg"></audio>`);
+ app.innerHTML=shell(`<div class="giftsTitle">Gift 2 </div><div class="giftStage" style="min-height:510px"><div class="danceFrame"><video id="dance" playsinline muted preload="metadata" src="dance_with_sorry_full.mp4"></video></div></div><div class="finalMsg">Bas aap hns dijiye nah Khush ho jaiye plzz 🤌🏻👀</div><audio id="danceAudio" controls preload="auto" class="audioPlayer"><source src="sorry_sorry.mp3" type="audio/mpeg"></audio>`);
  const a=document.getElementById('danceAudio');
  const v=document.getElementById('dance');
  if(!a||!v)return;
@@ -178,11 +178,11 @@ function renderGift2(){
    setTimeout(()=>renderCoupleFlow(),1300);
  });
  v.addEventListener('loadedmetadata',syncVideo);
- v.onerror=()=>toast('Dance video load nahi hua 😿');
- a.onerror=()=>toast('Sorry-Sorry audio load nahi hua 😿');
+ v.onerror=()=>toast('😿');
+ a.onerror=()=>toast('S');
 }
 function renderCoupleFlow(){
- app.innerHTML=shell(`<div class="giftsTitle">Ek aur chhota sa twist 😂</div><div class="coupleStage" id="coupleStage"><img class="coupleChar maleFall" src="male_fall.png" alt="male stick character"></div><div class="finalMsg" id="couplePrompt" style="margin-top:12px;opacity:0">Dance krengi? 👀</div><div class="coupleBtns" id="coupleBtns" style="opacity:0"><button class="btn pinkbtn" onclick="startCoupleWalk()">YES</button><button class="btn pinkbtn" onclick="startCoupleWalk()">YES</button></div>`);
+ app.innerHTML=shell(`<div class="giftsTitle"> chhota sa </div><div class="coupleStage" id="coupleStage"><img class="coupleChar maleFall" src="male_fall.png" alt="male stick character"></div><div class="finalMsg" id="couplePrompt" style="margin-top:12px;opacity:0">Dance krengi? 👀</div><div class="coupleBtns" id="coupleBtns" style="opacity:0"><button class="btn pinkbtn" onclick="startCoupleWalk()">YES</button><button class="btn pinkbtn" onclick="startCoupleWalk()">YES</button></div>`);
  setTimeout(()=>{const st=document.getElementById('coupleStage');if(!st)return;st.innerHTML='<img class="coupleChar maleAsk" src="male_ask.png" alt="male stick character asking">';const q=document.getElementById('couplePrompt');const b=document.getElementById('coupleBtns');if(q){q.style.opacity=1}if(b){b.style.opacity=1}},1350);
 }
 function startCoupleWalk(){
@@ -192,39 +192,39 @@ function startCoupleWalk(){
  setTimeout(()=>renderCoupleDance(),1650);
 }
 function renderCoupleDance(){
- app.innerHTML=shell(`<div class="giftsTitle">😂 Ab dono dance karenge</div><div class="coupleDanceBox"><button class="btn whitebtn skipCouple" onclick="finishCoupleDance()">⏭ Skip</button><div class="dancePair"><img class="stepChar m1" src="male_d1.png" alt="male dance step"><img class="stepChar m2" src="female_d1.png" alt="female dance step"></div></div><audio id="naatuPlayer" controls preload="metadata" style="width:min(560px,100%);margin-top:14px"><source src="naatu_28_49.mp3" type="audio/mpeg"></audio><button id="playNaatu" class="btn pinkbtn" style="margin-top:12px">▶ Play Dance Song</button><div class="funnyNote">Naatu Naatu • selected 20 sec part 😂</div>`);
+ app.innerHTML=shell(`<div class="giftsTitle"> dance </div><div class="coupleDanceBox"><button class="btn whitebtn skipCouple" onclick="finishCoupleDance()">⏭ Skip</button><div class="dancePair"><img class="stepChar m1" src="male_d1.png" alt="male dance step"><img class="stepChar m2" src="female_d1.png" alt="female dance step"></div></div><audio id="naatuPlayer" controls preload="metadata" style="width:min(560px,100%);margin-top:14px"><source src="naatu_28_49.mp3" type="audio/mpeg"></audio><button id="playNaatu" class="btn pinkbtn" style="margin-top:12px">▶ Play Dance Song</button><div class="funnyNote">Naatu Naatu • 🙂🌷🌷〽️</div>`);
  const pair=[['male_d1.png','female_d1.png'],['male_d2.png','female_d2.png'],['male_d3.png','female_d3.png']];let i=0;
  window.coupleTimer=setInterval(()=>{i=(i+1)%pair.length;const imgs=document.querySelectorAll('.stepChar');if(imgs.length===2){imgs[0].src=pair[i][0];imgs[1].src=pair[i][1];}},900);
  const p=document.getElementById('naatuPlayer');
- p.volume=.55; window.funnySongAudio=p; p.onerror=()=>toast('Naatu song file check kijiye 😿');
+ p.volume=.55; window.funnySongAudio=p; p.onerror=()=>toast('😿');
  const play=()=>{p.load();p.play().then(()=>{const b=document.getElementById('playNaatu');if(b)b.style.display='none';}).catch(()=>{toast('▶ Play Dance Song dabaiye 😿')});};
  document.getElementById('playNaatu').onclick=play;
  p.onended=()=>finishCoupleDance();
 }
 function finishCoupleDance(){if(window.coupleTimer){clearInterval(window.coupleTimer);window.coupleTimer=null;}if(window.funnySongAudio){window.funnySongAudio.pause();window.funnySongAudio.currentTime=0;}app.innerHTML=shell(`<div class="sorryPop">SORRY</div><div class="finalMsg" style="margin-top:16px">Plzz maaf kr dijiye 😿🤌🏻<br>ab plzz aa jaiye game me plzzzz</div><button class="btn green" style="margin-top:22px" onclick="page='gift3';render()">Aage ⭐</button>`);}
-const gift3Text=`Mera intention apko pareshan karna nhi hai yrr prr aap ek sec.ke.liye sochiye toh mere prr kya bittt rhi aap bole bs kuch din or usse unfriend kar dungi or hum fir pehle jese baat krenge prr bs rula rhe aap aap toh bs ignore kr rhe lekin usse meri kya halat ho rhi jante hai aap me kitna rota hu kitna tadapta hu nind bhi nhi aati mere ko 😭
+const gift3Text=`Mera intention apko pareshan karna nhi hai yrr prr aap ek sec.ke.liye sochiye toh mere prr kya bittt rhi aap bole bs kuch din or usse unfriend kar dungi or hum fir pehle jese baat krenge prr bs rula rhe aap aap toh bs ignore kr rhe lekin usse meri kya halat ho rhi jante hai aap me kitna rota hu kitna hurt hu nind bhi nhi aati mere ko 😭
 aap ek baar meri side se dekhte kitna painful hai ye 😣 pta hai kitna heavy lgta hai jb koi glt samjhta lekin hum usse samjha nhi paye ki jesa woh soch rhe essa nhi hai 🥺
-lekin me khud kyu bolu yrr mujhe bura lgg rha apko nhi pta kya mujhe kesa feel hota hai jb aap kisi or se baat kre nhi pta kya kesa lgg rha hai 😞
+lekin me khud kyu bolu yrr mujhe bura lgg rha apko nhi pta kya mujhe kesa feel hota hai jb aap kisi or se baat kre lekin mere se nhi 😣nhi pta kya kesa lgg rha hai 😞
 haan mujhe jalan hoti hai yr nhi pta kyu 😭🥺
 Prr plzz bataiye mujhe kese manau aapko me behtar bnna chahta hu apko wapis lane ke liye or me banunga bs aap bataiye kese kru me plzzz
 Gussa hona hai toh ho jaiye, par plzz ek baar maaf kar dijiye 🙇🏻
 Me aapko manana chahta hu, but plzz gussa ho lijiye, daant lijiye, par chuppp mat rahiyeee plzzz 😿😭😭
 Bht miss kar rha hu sach mee 😿😭
 I'm sorry sach meee 🤌🏻😿
-Agar jyada mann kre nah toh ye toy prop lijiye, daant dijiye, thapadd wali acting kar lijiye 😭😂
+Agar jyada mann kre nah toh ye gun lijiye, daant dijiye, thapadd hi maar lijiye 😭
 Prrr plzzzz chupp mat rahiyeee yrrr 😿🤌🏻
 Plzz maaf kr dijiye yrrr ⭐`;
 function renderGift4(){
- app.innerHTML=shell(`<div class="giftsTitle">Gift 4 ⭐</div><div class="gift3Text">${gift3Text}</div><div class="choices"><button type="button" class="btn choice pinkbtn" onclick="choice('Okk 😭 I\'m sorry...')">🏏<br>Ek daant padni chahiye 😭</button><button type="button" class="btn choice pinkbtn" onclick="choice('Okk 😭 I\'m sorry...')">🧸<br>Accha ji ye bhi seh lenge 😿</button><button type="button" class="btn choice pinkbtn" onclick="choice('Okk 😭 I\'m sorry...')">🖐🏻<br>Bas ek thappad wali maafi 😭</button><button type="button" class="btn choice green" onclick="choice('Thank uuu 😭🤌🏻 Ab plzz aa jaiye game me, bht miss kar rha hu plzzz 🤌🏻😿',true)">⭐<br>MAAF KIYA</button></div><button class="btn whitebtn" style="margin-top:14px" onclick="page='gifts';render()">← Sare gifts par wapas</button>`);
+ app.innerHTML=shell(`<div class="giftsTitle">Gift 4 ⭐</div><div class="gift3Text">${gift3Text}</div><div class="choices"><button type="button" class="btn choice pinkbtn" onclick="choice('Okk 😭 I\'m sorry...')">🏑<br>Ek padni chahiye heina 😭</button><button type="button" class="btn choice pinkbtn" onclick="choice('Okk 😭 I\'m sorry...')"><br>Accha isss udha dijiye 🔫😿</button><button type="button" class="btn choice pinkbtn" onclick="choice('Okk 😭 I\'m sorry...')">👋🏻<br>thappad maar ke maafi 😭</button><button type="button" class="btn choice green" onclick="choice('Thank uuu 😭🤌🏻 Ab plzz aa jaiye game me, bht miss kar rha hu plzzz 🤌🏻😿',true)">⭐<br>MAAF KIYA</button></div><button class="btn whitebtn" style="margin-top:14px" onclick="page='gifts';render()">← Sare gifts par wapas</button>`);
 }
 function choice(text,final=false){toast(text);if(final){setTimeout(()=>{page='songs';render()},1200)}}
 function stopSongAudio(){if(songAudio){songAudio.pause();songAudio.currentTime=0;songAudio=null;}if(secondSongAudio){secondSongAudio.pause();secondSongAudio.currentTime=0;secondSongAudio=null;}if(window.funnySongAudio){window.funnySongAudio.pause();window.funnySongAudio.currentTime=0;window.funnySongAudio=null;}const da=document.getElementById('danceAudio');if(da){da.pause();da.currentTime=0;}const dv=document.getElementById('dance');if(dv){dv.pause();dv.currentTime=0;}}
 function renderGift3(){
- app.innerHTML=shell(`<div class="giftsTitle">Gift 3 😂</div><div class="slapHint">Hii me hu Sahil, wahi pgl 😭</div><div class="slapStage"><img id="slapFace" class="slapFace" src="male_face.png" alt="Sahil stick character face"><div class="slapText">Hii me hu Sahil wahi pgl<br>ek chanta marenge plzzz 🤌🏻🤌🏻</div></div><div class="meterBox slapMeter"><div id="slapFill" class="meterFill" style="width:${slapCount}%"></div></div><div id="slapPct" class="meterPercent">${slapCount}%</div><audio id="slapAudio" preload="auto" src="slap.mp3"></audio><button id="slapBtn" class="btn pinkbtn" onclick="slapOnce()">🖐🏻 Ek chanta</button><div class="small" style="margin-top:10px">Meter full hone tak tap kijiye 😂</div>`);
+ app.innerHTML=shell(`<div class="giftsTitle">Gift 3 </div><div class="slapHint">Hii me hu Sahil, wahi pgl hu me😭</div><div class="slapStage"><img id="slapFace" class="slapFace" src="male_face.png" alt="Sahil stick character face"><div class="slapText">Hii me hu Sahil wahi pgl<br>ek chanta marenge plzzz mariye nah 🤌🏻🤌🏻</div></div><div class="meterBox slapMeter"><div id="slapFill" class="meterFill" style="width:${slapCount}%"></div></div><div id="slapPct" class="meterPercent">${slapCount}%</div><audio id="slapAudio" preload="auto" src="slap.mp3"></audio><button id="slapBtn" class="btn pinkbtn" onclick="slapOnce()">🖐🏻 Ek chanta</button><div class="small" style="margin-top:10px">Marte rahiye </div>`);
 }
 function slapOnce(){
  if(slapCount>=100)return;
- const a=document.getElementById('slapAudio');if(a){a.currentTime=0;a.volume=.7;a.play().catch(()=>toast('Audio load nahi hua 😿 ZIP ke saare files upload kijiye'));}
+ const a=document.getElementById('slapAudio');if(a){a.currentTime=0;a.volume=.7;a.play().catch(()=>toast('😿 '));}
  slapCount=Math.min(100,slapCount+10);
  const face=document.getElementById('slapFace');if(face){face.classList.remove('slapShake');void face.offsetWidth;face.classList.add('slapShake');}
  const fill=document.getElementById('slapFill');const pct=document.getElementById('slapPct');if(fill)fill.style.width=slapCount+'%';if(pct)pct.textContent=slapCount+'%';
@@ -233,7 +233,7 @@ function slapOnce(){
 let kickCount=0;
 function renderKickScene(){
  kickCount=0;
- app.innerHTML=shell(`<div class="giftsTitle">Accha ji… ab ek aur 😂</div><div class="kickStage"><img id="kickFrame" class="kickFrame" src="kick_frame1.jpg" alt="funny stick-character cartoon sequence"></div><div id="kickText" class="kickText">Laat wala option 😂</div><button id="kickBtn" class="btn pinkbtn kickBtn" onclick="kickOnce()">🦶🏻 Ek laat</button><div id="kickResult" class="kickResult"></div>`);
+ app.innerHTML=shell(`<div class="giftsTitle">Accha ab ek aur </div><div class="kickStage"><img id="kickFrame" class="kickFrame" src="kick_frame1.jpg" alt="funny stick-character cartoon sequence"></div><div id="kickText" class="kickText">Laat wala option </div><button id="kickBtn" class="btn pinkbtn kickBtn" onclick="kickOnce()">🦶🏻 Ek laat</button><div id="kickResult" class="kickResult"></div>`);
 }
 function kickOnce(){
  if(kickCount>=3)return;
@@ -244,7 +244,7 @@ function kickOnce(){
  const result=document.getElementById('kickResult');
  const sound=new Audio('kick-sound-effect-yes.mp3'); sound.currentTime=0; sound.play().catch(()=>{});
  if(frame) frame.src=`kick_frame${kickCount+1}.jpg`;
- if(text) text.textContent=kickCount===1?'Oho 😭':kickCount===2?'Arre rukooo 😂':'Bas teesri ho gayi 😭';
+ if(text) text.textContent=kickCount===1?'Oho 😭':kickCount===2?'Arre rukooo 🙂':'Bas teesri ho gayi 😭';
  if(kickCount===3){
    if(btn) btn.style.display='none';
    setTimeout(()=>{ if(frame) frame.src='kick_frame5.jpg'; },550);
@@ -260,9 +260,9 @@ function kickOnce(){
 
 function renderSlapSong(){page='chalo';render();}
 function renderChalo(){
- app.innerHTML=shell(`<div class="giftsTitle">Accha ji, ab gaana sun lijiye 😂</div><div class="finalMsg">Ab maafi ke baad ye wala song bhi sun lijiye plzz 🤌🏻</div><audio id="chaloPlayer" controls preload="metadata" class="audioPlayer"><source src="chalo_2m31_3m00.mp3" type="audio/mpeg"></audio><button id="playChalo" class="btn pinkbtn" style="margin-top:12px">▶ Play Song</button><button class="btn whitebtn" style="margin-top:12px" onclick="stopSongAudio();page='gifts';render()">← Sare gifts par wapas</button>`);
- const p=document.getElementById('chaloPlayer');p.volume=.35;p.onerror=()=>toast('Chalo song file check kijiye 😿');
- const play=()=>{p.play().catch(()=>toast('Audio load nahi hua 😿'));};
+ app.innerHTML=shell(`<div class="giftsTitle">Accha ji, ab gaana sun lijiye </div><div class="finalMsg">Ab ye wala bhi song bhi sun lijiye plzz 🤌🏻</div><audio id="chaloPlayer" controls preload="metadata" class="audioPlayer"><source src="chalo_2m31_3m00.mp3" type="audio/mpeg"></audio><button id="playChalo" class="btn pinkbtn" style="margin-top:12px">▶ Play Song</button><button class="btn whitebtn" style="margin-top:12px" onclick="stopSongAudio();page='gifts';render()">← Sare gifts par wapas</button>`);
+ const p=document.getElementById('chaloPlayer');p.volume=.35;p.onerror=()=>toast(' 😿');
+ const play=()=>{p.play().catch(()=>toast('😿'));};
  document.getElementById('playChalo').onclick=play;
  p.onended=()=>{app.innerHTML=shell(`<div class="sorryPop">SORRY</div><div class="finalMsg" style="margin-top:16px">okk thank uu 😩👀<br>ab plzz aa jaiye bht chinta ho rhii<br>gamee me aa jaiye plzz</div><button class="btn green" style="margin-top:22px" onclick="page='gift4';render()">Aage ⭐</button>`);};
 }
@@ -270,7 +270,7 @@ function renderSlap(){page='gift3';render();}
 
 function renderSongs(){
  stopSongAudio();
- app.innerHTML=shell(`<div class="giftsTitle">Ek chhoti si baat ⭐</div><div class="finalMsg" style="max-width:620px">Sun lijiye plzz plzzzz plzzzz 🤌🏻</div><button id="songBtn" class="btn pinkbtn" style="margin-top:22px">▶ SONG</button><audio id="yaaraPlayer" controls preload="metadata" class="audioPlayer"><source src="yaara.mp3" type="audio/mpeg"></audio><div id="songArea" style="width:100%;margin-top:18px"></div>`);
+ app.innerHTML=shell(`<div class="giftsTitle">Ek chhoti si baat 😖⭐</div><div class="finalMsg" style="max-width:620px">Sun lijiye plzz plzzzz plzzzz 🤌🏻</div><button id="songBtn" class="btn pinkbtn" style="margin-top:22px">▶ SONG</button><audio id="yaaraPlayer" controls preload="metadata" class="audioPlayer"><source src="yaara.mp3" type="audio/mpeg"></audio><div id="songArea" style="width:100%;margin-top:18px"></div>`);
  document.getElementById('songBtn').onclick=()=>playFirstSong();
 }
 function playFirstSong(){
@@ -279,24 +279,24 @@ function playFirstSong(){
  p.volume=.35;
  p.currentTime=0;
  p.load();
- p.play().catch(()=>toast('Audio load nahi hua 😿 Audio file GitHub me upload hai kya check kijiye'));
+ p.play().catch(()=>toast(' 😿 '));
  const btn=document.getElementById('songBtn');btn.textContent='🎵 Playing...';
- p.onerror=()=>toast('Yaara song file GitHub me upload hai kya check kijiye 😿');p.onended=()=>{btn.disabled=true;document.getElementById('songArea').innerHTML=`<div class="finalMsg" style="margin:18px 0">Ek aur suna du? 👀</div><div class="actions" style="min-height:80px"><button class="btn green" onclick="playSecondSong()">YES</button><button class="btn redbtn" onclick="skipToLastText()">NO</button></div>`;};
+ p.onerror=()=>toast('Yaara 😿');p.onended=()=>{btn.disabled=true;document.getElementById('songArea').innerHTML=`<div class="finalMsg" style="margin:18px 0">Ek aur suna du? 👀</div><div class="actions" style="min-height:80px"><button class="btn green" onclick="playSecondSong()">YES</button><button class="btn redbtn" onclick="skipToLastText()">NO</button></div>`;};
 }
 function playSecondSong(){
  const area=document.getElementById('songArea');
  area.innerHTML=`<div class="finalMsg" style="margin:18px 0">Sitaare wala song ⭐</div><audio id="sitaarePlayer" controls preload="metadata" class="audioPlayer"><source src="sitaare.mp3" type="audio/mpeg"></audio><div style="margin-top:14px"><button class="btn pinkbtn" onclick="skipToLastText()">⏭ Skip</button></div>`;
- const p=document.getElementById('sitaarePlayer');p.volume=.35;secondSongAudio=p;p.onerror=()=>toast('Sitaare song file GitHub me upload hai kya check kijiye 😿');p.play().catch(()=>toast('Audio load nahi hua 😿 Audio file GitHub me upload hai kya check kijiye'));p.onended=()=>showLastSongText();
+ const p=document.getElementById('sitaarePlayer');p.volume=.35;secondSongAudio=p;p.onerror=()=>toast('Sitaare song 😿');p.play().catch(()=>toast(' 😿 Audio '));p.onended=()=>showLastSongText();
  const first=document.getElementById('yaaraPlayer');if(first){first.pause();first.currentTime=0;}
 }
 function skipToLastText(){stopSongAudio();showLastSongText();}
 function showLastSongText(){
  stopSongAudio();
- app.innerHTML=shell(`<div class="giftsTitle">⭐</div><div class="finalMsg">okk thank uu 😩👀<br>ab plzz aa jaiye bht chinta ho rhii<br>gamee me aa jaiye plzz</div><button class="btn green" style="margin-top:25px" onclick="page='final';render()">Aage ⭐</button>`);
+ app.innerHTML=shell(`<div class="giftsTitle">⭐</div><div class="finalMsg">okk thank uu 😩👀<br>ab plzz aa jaiye bht chinta ho rhii<br>gamee me aa jaiye plzz</div><button class="btn green" style="margin-top:25px" onclick="page='final';render()">Aage</button>`);
 }
 function renderFinal(){
  const done=finalPct>=100;
- app.innerHTML=shell(`<div class="meterTitle">Maafi Meter</div><div class="meterSub">Star tap karke meter pura kijiye ⭐</div><div class="meterFinal"><div class="meterBox"><div id="finalFill" class="meterFill" style="width:${finalPct}%"></div></div><div id="finalPct" class="meterPercent">${finalPct}%</div><div id="finalStatus" class="meterStatus">${done?'Maaf Kiya ⭐':'Maafi pending…'}</div></div>${done?`<div class="finalGiftReveal"><img src="final_gift.jpg" alt="final gift"></div><div class="finalMsg">Maaf Kiya ⭐</div>`:`<button type="button" class="starButton" onclick="addForgiveness()">⭐</button>`}`);
+ app.innerHTML=shell(`<div class="meterTitle">Maafi Meter</div><div class="meterSub"> tap kijiye nah ⭐</div><div class="meterFinal"><div class="meterBox"><div id="finalFill" class="meterFill" style="width:${finalPct}%"></div></div><div id="finalPct" class="meterPercent">${finalPct}%</div><div id="finalStatus" class="meterStatus">${done?'Maaf Kiya ⭐':'Maafi pending… hai'}</div></div>${done?`<div class="finalGiftReveal"><img src="final_gift.jpg" alt="final gift"></div><div class="finalMsg">Maaf Kiya ⭐</div>`:`<button type="button" class="starButton" onclick="addForgiveness()">🤩</button>`}`);
 }
 function addForgiveness(){if(finalPct<100)finalPct=Math.min(100,finalPct+10);renderFinal();if(finalPct===100)toast('MAAF KIYA ⭐😭');}
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1700)}
